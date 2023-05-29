@@ -15,7 +15,7 @@ const name = initName();
 const limit = 100;
 let correctAnswersCounter = 0;
 let onPlay = true;
-
+console.log(`Hello, ${name}!`);
 console.log('Find the greatest common divisor of given numbers.');
 
 while (onPlay) {
