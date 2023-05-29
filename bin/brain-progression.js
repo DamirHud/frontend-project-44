@@ -5,28 +5,32 @@ import readlineSync from 'readline-sync';
 import initName from '../src/cli.js';
 import { generateNumber, wrongAnswer } from '../src/index.js';
 
-function gcd(num1, num2) {
-  if (num2 === 0) {
-    return num1;
-  }
-  return gcd(num2, num1 % num2);
-}
-
 const name = initName();
-const limit = 100;
-let correctAnswersCounter = 0;
 let onPlay = true;
+let correctAnswersCounter = 0;
+
+const length = 10;
+const step = 2;
+
 console.log(`Hello, ${name}!`);
-console.log('Find the greatest common divisor of given numbers.');
+console.log('What number is missing in the progression?');
 
 while (onPlay) {
-  const num1 = generateNumber(limit);
-  const num2 = generateNumber(limit);
-  const divider = gcd(num1, num2);
-  console.log(`Question: ${num1} ${num2}`);
+  const start = generateNumber(50);
+  const progression = [];
+
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + i * step);
+  }
+
+  const secretIndex = generateNumber(10);
+  const secretNumber = progression[secretIndex];
+  progression[secretIndex] = '..';
+
+  console.log(`Question: ${progression.join(' ')}`);
   const answer = readlineSync.question('Your answer: ');
 
-  if (divider.toString() === answer.toString()) {
+  if (secretNumber.toString() === answer.toString()) {
     console.log('Correct!');
     correctAnswersCounter += 1;
     if (correctAnswersCounter === 3) {
@@ -34,7 +38,7 @@ while (onPlay) {
       onPlay = false;
     }
   } else {
-    console.log(wrongAnswer(answer, divider));
+    console.log(wrongAnswer(answer, secretNumber));
     console.log(`Let's try again, ${name}!`);
     onPlay = false;
   }
