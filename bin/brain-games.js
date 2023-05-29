@@ -1,7 +1,6 @@
 #!/usr/bin/env node
+import initName from '../src/cli.js';
 
-import { greetings } from "../src/cli.js";
+const name = initName();
 
-
-const greetingMessage = greetings();
-console.log(greetingMessage);
+console.log(`Hello, ${name}`);
