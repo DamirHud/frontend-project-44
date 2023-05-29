@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 // eslint-disable-next-line import/no-extraneous-dependencies
 import readlineSync from 'readline-sync';
 import initName from '../src/cli.js';
