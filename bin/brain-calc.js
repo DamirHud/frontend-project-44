@@ -19,7 +19,6 @@ while (onPlay) {
   const operation = Math.floor(Math.random() * 2);
   let res = 0;
   let sym = '';
-  console.log(correctAnswersCounter);
 
   switch (operation) {
     case 0:
