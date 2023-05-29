@@ -52,7 +52,7 @@ while (onPlay) {
     }
   } else {
     console.log(wrongAnswer(answer, res));
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}!`);
     onPlay = false;
   }
 }

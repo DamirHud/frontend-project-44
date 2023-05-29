@@ -33,7 +33,7 @@ while (onPlay) {
     correctAnswersCounter += 1;
   } else {
     console.log(wrongAnswer(answer, correctAnswer));
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}!`);
     onPlay = false;
   }
 

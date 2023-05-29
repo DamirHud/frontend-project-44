@@ -34,7 +34,7 @@ while (onPlay) {
     }
   } else {
     console.log(wrongAnswer(answer, divider));
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}!`);
     onPlay = false;
   }
 }
